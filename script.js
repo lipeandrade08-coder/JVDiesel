@@ -12,15 +12,28 @@
   const navLinks = document.getElementById('navLinks');
   const navLinkItems = document.querySelectorAll('.nav-link:not(.nav-cta)');
 
+  const backToTop = document.getElementById('backToTop');
+
+  // Throttle global scroll events for 60fps performance
+  let isScrolling = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        const scrolled = window.scrollY;
+        
+        // Navbar
+        if (scrolled > 60) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+        
+        // Back to top
+        if (scrolled > 400) backToTop.classList.add('visible');
+        else backToTop.classList.remove('visible');
+        
+        isScrolling = false;
+      });
+      isScrolling = true;
     }
-    updateActiveLink();
-    toggleBackToTop();
-  });
+  }, { passive: true });
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
@@ -37,27 +50,22 @@
     });
   });
 
-  // Active link on scroll
-  function updateActiveLink() {
-    const sections = ['inicio', 'sobre', 'servicos', 'diferenciais', 'galeria', 'depoimentos', 'contato'];
-    const scrollPos = window.scrollY + 120;
-
-    sections.forEach(id => {
-      const section = document.getElementById(id);
-      if (!section) return;
-      const top = section.offsetTop;
-      const bottom = top + section.offsetHeight;
-
-      if (scrollPos >= top && scrollPos < bottom) {
+  // Active link on scroll (IntersectionObserver prevents layout thrashing)
+  const sections = document.querySelectorAll('section[id]');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
         navLinkItems.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + id) {
+          if (link.getAttribute('href') === '#' + entry.target.id) {
             link.classList.add('active');
           }
         });
       }
     });
-  }
+  }, { threshold: 0.2, rootMargin: '-20% 0px -60% 0px' });
+
+  sections.forEach(section => navObserver.observe(section));
 
   // ─── INTERSECTION OBSERVER (Animations) ────────────────────
   const animateEls = document.querySelectorAll('[data-animate]');
@@ -189,40 +197,48 @@
   }
 
   // ─── BACK TO TOP ───────────────────────────────────────────
-  const backToTop = document.getElementById('backToTop');
-  function toggleBackToTop() {
-    if (window.scrollY > 400) {
-      backToTop.classList.add('visible');
-    } else {
-      backToTop.classList.remove('visible');
-    }
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 
   // ─── PARALLAX HERO ─────────────────────────────────────────
   const heroImg = document.querySelector('.hero-img');
   if (heroImg) {
+    let heroTicking = false;
     window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      if (scrolled < window.innerHeight) {
-        heroImg.style.transform = `scale(1.08) translateY(${scrolled * 0.15}px)`;
+      if (!heroTicking) {
+        window.requestAnimationFrame(() => {
+          const scrolled = window.scrollY;
+          if (scrolled < window.innerHeight) {
+            heroImg.style.transform = `translate3d(0, ${scrolled * 0.15}px, 0) scale(1.08)`;
+          }
+          heroTicking = false;
+        });
+        heroTicking = true;
       }
     }, { passive: true });
   }
 
   // ─── SMOOTH HOVER TILT on Service Cards ────────────────────
   document.querySelectorAll('.service-card, .why-card').forEach(card => {
+    let tiltTicking = false;
     card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
-      const dx = (x - cx) / cx;
-      const dy = (y - cy) / cy;
-      card.style.transform = `translateY(-6px) rotateX(${-dy * 4}deg) rotateY(${dx * 4}deg)`;
+      if (!tiltTicking) {
+        window.requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const cx = rect.width / 2;
+          const cy = rect.height / 2;
+          const dx = (x - cx) / cx;
+          const dy = (y - cy) / cy;
+          card.style.transform = `translate3d(0, -6px, 0) rotateX(${-dy * 4}deg) rotateY(${dx * 4}deg)`;
+          tiltTicking = false;
+        });
+        tiltTicking = true;
+      }
     });
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
@@ -308,7 +324,6 @@
   });
 
   // ─── INIT ──────────────────────────────────────────────────
-  updateActiveLink();
-  toggleBackToTop();
+  // Initialization logic is handled by Observers asynchronously.
 
 })();
