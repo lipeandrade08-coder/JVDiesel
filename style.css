@@ -257,8 +257,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 0.75rem;
   flex-shrink: 0;
 }
-.nav-symbol { height: 44px; width: auto; filter: drop-shadow(0 0 8px var(--red-glow)); }
-.nav-wordmark { height: 24px; width: auto; }
+.nav-symbol { height: 56px; width: auto; filter: drop-shadow(0 0 12px var(--red-glow)); }
 
 .nav-links {
   display: flex;
@@ -409,9 +408,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   animation: fadeInUp 1s ease 0.4s both;
 }
 .hero-logo {
-  height: clamp(160px, 25vw, 280px);
+  height: clamp(180px, 28vw, 320px);
   width: auto;
-  filter: drop-shadow(0 10px 40px rgba(0,0,0,0.8)) drop-shadow(0 0 60px rgba(200,16,46,0.3));
+  filter: drop-shadow(0 10px 40px rgba(0,0,0,0.8)) drop-shadow(0 0 80px rgba(200,16,46,0.5));
 }
 
 .hero-sub {
@@ -1131,7 +1130,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 0.75rem;
   backdrop-filter: blur(10px);
 }
-.map-pin-overlay img { height: 32px; width: auto; }
+.map-pin-overlay img { height: 40px; width: auto; }
 .map-pin-overlay span {
   font-family: var(--font-heading);
   font-size: 0.9rem;
@@ -1156,10 +1155,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .footer-logo {
-  height: 80px;
+  height: 110px;
   width: auto;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 4px 12px rgba(200,16,46,0.3));
+  filter: drop-shadow(0 4px 20px rgba(200,16,46,0.5));
 }
 .footer-tagline {
   font-family: var(--font-heading);
@@ -1359,13 +1358,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     padding: 0.8rem 2.5rem;
   }
   .hamburger { display: flex; }
-  .nav-wordmark { height: 20px; }
-  .nav-symbol { height: 38px; }
+  .nav-symbol { height: 44px; }
 
   /* ── Hero ── */
   .hero { min-height: 100svh; align-items: flex-end; }
   .hero-content { padding-bottom: 5rem; padding-top: calc(var(--nav-height) + 1rem); }
-  .hero-logo { height: clamp(120px, 30vw, 200px); }
+  .hero-logo { height: clamp(140px, 30vw, 220px); }
   .hero-badge { margin-bottom: 1.25rem; }
   .hero-sub { max-width: 100%; font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
   .hero-actions { margin-bottom: 2.5rem; }
@@ -1412,7 +1410,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   /* ── Footer ── */
   .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; padding: 3rem 1.5rem; }
-  .footer-logo { height: 65px; }
+  .footer-logo { height: 80px; }
 }
 
 /* ── Mobile (≤ 768px) ── */
@@ -1468,7 +1466,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .navbar { padding: 0 1rem; }
 
   /* ── Hero ── */
-  .hero-logo { height: clamp(100px, 28vw, 150px); }
+  .hero-logo { height: clamp(110px, 28vw, 160px); }
   .hero-badge { margin-bottom: 1rem; }
   .badge-text { font-size: 0.7rem; letter-spacing: 0.15em; }
   .hero-sub { font-size: 0.9rem; margin-bottom: 1.5rem; }
@@ -1532,8 +1530,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 @media (max-width: 400px) {
   :root { --nav-height: 58px; }
 
-  .nav-symbol { height: 32px; }
-  .nav-wordmark { height: 17px; }
+  .nav-symbol { height: 36px; }
 
   /* ── Hero ── */
   .hero-logo { height: 90px; }
@@ -1560,7 +1557,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .contact-value { font-size: 1rem; }
 
   /* ── Footer ── */
-  .footer-logo { height: 55px; }
+  .footer-logo { height: 70px; }
 
   /* ── Floating buttons: stack vertically ── */
   .whatsapp-float { bottom: 1rem; right: 1rem; width: 50px; height: 50px; }
