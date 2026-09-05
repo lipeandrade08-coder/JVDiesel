@@ -1,0 +1,34 @@
+# ============================================================
+# robots.txt – JV Diesel
+# https://www.jvdiesel.com.br/
+# ============================================================
+
+# Permitir todos os rastreadores (Google, Bing, etc.)
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.jvdiesel.com.br/sitemap.xml
+
+# Googlebot específico
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bingbot específico
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bloquear rastreadores indesejados / scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
