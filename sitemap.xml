@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
   ================================================================
-  SITEMAP.XML – JV Diesel  |  https://www.jvdiesel.com.br/
+  SITEMAP.XML - JV Diesel  |  https://www.jvdiesel.com.br/
   ================================================================
   Gerado em: 2026-09-17
-  Padrão    : Sitemaps Protocol 0.9 + Image Sitemap Extension
-  Cobertura : Todas as seções da single-page + imagens indexáveis
+  Padrao    : Sitemaps Protocol 0.9 + Image Sitemap Extension
+
+  NOTA: URLs com fragmentos (#secao) nao sao permitidas pelo Google.
+  Este site e uma single-page app (SPA) - apenas a raiz e listada.
+  As imagens de todas as secoes sao indexadas via Image Sitemap.
   ================================================================
 -->
 <urlset
@@ -13,198 +16,79 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- ============================================================
-       PÁGINA PRINCIPAL – Prioridade Máxima
-  ============================================================ -->
+  <!-- Pagina principal - unica URL real do site (single-page) -->
   <url>
     <loc>https://www.jvdiesel.com.br/</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
 
-    <!-- hreflang: indica idioma/região para o Google -->
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jvdiesel.com.br/" />
 
-    <!-- Image Sitemap: indexação no Google Images -->
+    <!-- Hero / Banner principal -->
     <image:image>
       <image:loc>https://www.jvdiesel.com.br/images/hero_workshop.jpg</image:loc>
-      <image:title>Oficina JV Diesel – Mecânica Diesel Pesado em Guaratinguetá SP</image:title>
-      <image:caption>Oficina especializada em manutenção de caminhões e veículos pesados. JV Diesel, Guaratinguetá – SP.</image:caption>
-      <image:geo_location>Guaratinguetá, SP, Brasil</image:geo_location>
+      <image:title>Oficina JV Diesel - Mecanica Diesel Pesado em Guaratingueta SP</image:title>
+      <image:caption>Oficina especializada em manutencao de caminhoes e veiculos pesados. JV Diesel, Guaratingueta - SP.</image:caption>
+      <image:geo_location>Guaratingueta, SP, Brasil</image:geo_location>
       <image:license>https://www.jvdiesel.com.br/</image:license>
     </image:image>
+
+    <!-- Logotipo principal sem fundo -->
     <image:image>
       <image:loc>https://www.jvdiesel.com.br/emblemasemfundo.png</image:loc>
-      <image:title>Logo JV Diesel – Oficina Diesel Pesado Guaratinguetá</image:title>
-      <image:caption>Logotipo oficial da JV Diesel, oficina especializada em motores diesel e veículos pesados.</image:caption>
-      <image:geo_location>Guaratinguetá, SP, Brasil</image:geo_location>
+      <image:title>Logo JV Diesel - Oficina Diesel Pesado Guaratingueta</image:title>
+      <image:caption>Logotipo oficial da JV Diesel, oficina especializada em motores diesel e veiculos pesados.</image:caption>
+      <image:geo_location>Guaratingueta, SP, Brasil</image:geo_location>
       <image:license>https://www.jvdiesel.com.br/</image:license>
     </image:image>
+
+    <!-- Logo completa -->
     <image:image>
       <image:loc>https://www.jvdiesel.com.br/01_logo_completa_transparente.png</image:loc>
-      <image:title>JV Diesel – Logo Completa Transparente</image:title>
-      <image:caption>Marca completa JV Diesel – referência em mecânica diesel no Vale do Paraíba.</image:caption>
-      <image:geo_location>Guaratinguetá, SP, Brasil</image:geo_location>
+      <image:title>JV Diesel - Logo Completa Transparente</image:title>
+      <image:caption>Marca completa JV Diesel - referencia em mecanica diesel no Vale do Paraiba.</image:caption>
+      <image:geo_location>Guaratingueta, SP, Brasil</image:geo_location>
       <image:license>https://www.jvdiesel.com.br/</image:license>
     </image:image>
-  </url>
 
-  <!-- ============================================================
-       SEÇÃO: SOBRE NÓS
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#sobre</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#sobre" />
-  </url>
-
-  <!-- ============================================================
-       SEÇÃO: SERVIÇOS (alta conversão)
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#servicos</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#servicos" />
-  </url>
-
-  <!-- ============================================================
-       SERVIÇO: MANUTENÇÃO DE MOTORES DIESEL
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#servico-motores-diesel</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#servico-motores-diesel" />
-  </url>
-
-  <!-- ============================================================
-       SERVIÇO: INJEÇÃO ELETRÔNICA DIESEL
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#servico-injecao-eletronica</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#servico-injecao-eletronica" />
-  </url>
-
-  <!-- ============================================================
-       SERVIÇO: DIAGNÓSTICO COMPUTADORIZADO
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#servico-diagnostico</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#servico-diagnostico" />
-  </url>
-
-  <!-- ============================================================
-       SERVIÇO: RETÍFICA DE MOTORES
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#servico-reticula-motores</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#servico-reticula-motores" />
-  </url>
-
-  <!-- ============================================================
-       SERVIÇO: FREIOS E SUSPENSÃO
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#servico-freios-suspensao</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#servico-freios-suspensao" />
-  </url>
-
-  <!-- ============================================================
-       SERVIÇO: AR-CONDICIONADO CAMINHÃO
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#servico-ar-condicionado</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#servico-ar-condicionado" />
-  </url>
-
-  <!-- ============================================================
-       SEÇÃO: DIFERENCIAIS / POR QUE A JV DIESEL
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#diferenciais</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#diferenciais" />
-  </url>
-
-  <!-- ============================================================
-       SEÇÃO: GALERIA DE TRABALHOS
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#galeria</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.72</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#galeria" />
+    <!-- Emblema diesel -->
     <image:image>
       <image:loc>https://www.jvdiesel.com.br/emblema-diesel.png</image:loc>
-      <image:title>Emblema JV Diesel – Caminhões e Engrenagem Guaratinguetá</image:title>
-      <image:caption>Emblema da JV Diesel representando caminhões e mecânica pesada em Guaratinguetá SP.</image:caption>
-      <image:geo_location>Guaratinguetá, SP, Brasil</image:geo_location>
+      <image:title>Emblema JV Diesel - Caminhoes e Engrenagem Guaratingueta</image:title>
+      <image:caption>Emblema da JV Diesel representando caminhoes e mecanica pesada em Guaratingueta SP.</image:caption>
+      <image:geo_location>Guaratingueta, SP, Brasil</image:geo_location>
       <image:license>https://www.jvdiesel.com.br/</image:license>
     </image:image>
+
+    <!-- Emblema industrial -->
     <image:image>
       <image:loc>https://www.jvdiesel.com.br/emblema-industrial.png</image:loc>
-      <image:title>Emblema Industrial JV Diesel – Veículos Pesados</image:title>
-      <image:caption>Emblema industrial JV Diesel com três veículos pesados – mecânica diesel Guaratinguetá SP.</image:caption>
-      <image:geo_location>Guaratinguetá, SP, Brasil</image:geo_location>
+      <image:title>Emblema Industrial JV Diesel - Veiculos Pesados</image:title>
+      <image:caption>Emblema industrial JV Diesel com tres veiculos pesados - mecanica diesel Guaratingueta SP.</image:caption>
+      <image:geo_location>Guaratingueta, SP, Brasil</image:geo_location>
       <image:license>https://www.jvdiesel.com.br/</image:license>
     </image:image>
-  </url>
 
-  <!-- ============================================================
-       SEÇÃO: DEPOIMENTOS / AVALIAÇÕES DE CLIENTES
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#depoimentos</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#depoimentos" />
-  </url>
+    <!-- Simbolo JV -->
+    <image:image>
+      <image:loc>https://www.jvdiesel.com.br/02_simbolo_JV_transparente.png</image:loc>
+      <image:title>Simbolo JV Diesel - Icone da Marca</image:title>
+      <image:caption>Simbolo oficial da marca JV Diesel, oficina mecanica diesel em Guaratingueta SP.</image:caption>
+      <image:geo_location>Guaratingueta, SP, Brasil</image:geo_location>
+      <image:license>https://www.jvdiesel.com.br/</image:license>
+    </image:image>
 
-  <!-- ============================================================
-       SEÇÃO: CONTATO (alta conversão – WhatsApp, telefone, e-mail)
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#contato</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#contato" />
-  </url>
+    <!-- Localizacao -->
+    <image:image>
+      <image:loc>https://www.jvdiesel.com.br/05_localizacao_guaratingueta_transparente.png</image:loc>
+      <image:title>JV Diesel - Localizacao em Guaratingueta SP</image:title>
+      <image:caption>Localizacao da JV Diesel em Guaratingueta, SP - Rua Goiania, 42, Jardim Vista Alegre.</image:caption>
+      <image:geo_location>Guaratingueta, SP, Brasil</image:geo_location>
+      <image:license>https://www.jvdiesel.com.br/</image:license>
+    </image:image>
 
-  <!-- ============================================================
-       SEÇÃO: LOCALIZAÇÃO / MAPA (SEO local)
-  ============================================================ -->
-  <url>
-    <loc>https://www.jvdiesel.com.br/#localizacao</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.jvdiesel.com.br/#localizacao" />
   </url>
 
 </urlset>
