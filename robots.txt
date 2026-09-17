@@ -1,34 +1,199 @@
-# ============================================================
-# robots.txt – JV Diesel
-# https://www.jvdiesel.com.br/
-# ============================================================
+# ================================================================
+# robots.txt – JV Diesel Guaratinguetá
+# Site   : https://www.jvdiesel.com.br/
+# Criado : 2026-09-17
+# ================================================================
+# Guia rápido:
+#   Allow    = permite acesso do bot ao caminho
+#   Disallow = bloqueia acesso do bot ao caminho
+#   Crawl-delay = intervalo mínimo (segundos) entre requisições
+# ================================================================
 
-# Permitir todos os rastreadores (Google, Bing, etc.)
+# ----------------------------------------------------------------
+# TODOS OS ROBÔS – regra geral (acesso total)
+# ----------------------------------------------------------------
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://www.jvdiesel.com.br/sitemap.xml
-
-# Googlebot específico
+# ----------------------------------------------------------------
+# GOOGLE – Googlebot (busca geral) + subagentes especializados
+# ----------------------------------------------------------------
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 2
 
-# Bingbot específico
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Google-InspectionTool
+Allow: /
+
+# ----------------------------------------------------------------
+# BING / MICROSOFT
+# ----------------------------------------------------------------
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 2
 
-# Bloquear rastreadores indesejados / scrapers
+User-agent: MSNBot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# ----------------------------------------------------------------
+# YAHOO
+# ----------------------------------------------------------------
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# ----------------------------------------------------------------
+# DUCKDUCKGO
+# ----------------------------------------------------------------
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 2
+
+# ----------------------------------------------------------------
+# YANDEX (Rússia – acesso internacional)
+# ----------------------------------------------------------------
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 3
+
+# ----------------------------------------------------------------
+# BAIDU (China – acesso internacional)
+# ----------------------------------------------------------------
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 3
+
+# ----------------------------------------------------------------
+# APPLE – Applebot (Siri, Safari, Spotlight)
+# ----------------------------------------------------------------
+User-agent: Applebot
+Allow: /
+
+# ----------------------------------------------------------------
+# PINTEREST
+# ----------------------------------------------------------------
+User-agent: Pinterestbot
+Allow: /images/
+Allow: /
+
+# ----------------------------------------------------------------
+# LINKEDIN / META (Facebook, Instagram, WhatsApp)
+# – necessário para gerar previews de links compartilhados
+# ----------------------------------------------------------------
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# ----------------------------------------------------------------
+# INTELIGÊNCIA ARTIFICIAL – bots de treino/LLM
+# ----------------------------------------------------------------
+
+# OpenAI – ChatGPT / GPT
+User-agent: GPTBot
+Allow: /
+
+# OpenAI – SearchGPT
+User-agent: OAI-SearchBot
+Allow: /
+
+# ChatGPT Browsing
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic – Claude
+User-agent: ClaudeBot
+Allow: /
+
+# Google Gemini / AI Overview
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Amazon Alexa
+User-agent: Amazonbot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# ----------------------------------------------------------------
+# WEBMASTER TOOLS – verificação e auditoria (permitir)
+# ----------------------------------------------------------------
+User-agent: MajesticSEO
+Allow: /
+
+User-agent: Screaming Frog SEO Spider
+Allow: /
+
+# ----------------------------------------------------------------
+# BOTS MALICIOSOS / SCRAPERS / SPAM – BLOQUEADOS
+# ----------------------------------------------------------------
+
+# Ahrefs – ferramenta de espionagem de backlinks
 User-agent: AhrefsBot
 Disallow: /
 
+# SEMrush
 User-agent: SemrushBot
 Disallow: /
 
+# Majestic – crawl agressivo
 User-agent: MJ12bot
 Disallow: /
 
+# DotBot – scraper agressivo
 User-agent: DotBot
 Disallow: /
+
+# PetalBot – Huawei (crawl excessivo)
+User-agent: PetalBot
+Disallow: /
+
+# DataForSEO
+User-agent: DataForSeoBot
+Disallow: /
+
+# BLEXBot – scraper
+User-agent: BLEXBot
+Disallow: /
+
+# SiteAuditBot
+User-agent: SiteAuditBot
+Disallow: /
+
+# Rogerbot – Moz
+User-agent: rogerbot
+Disallow: /
+
+# ----------------------------------------------------------------
+# SITEMAPS (pode haver múltiplos – separe com linhas extras)
+# ----------------------------------------------------------------
+Sitemap: https://www.jvdiesel.com.br/sitemap.xml
